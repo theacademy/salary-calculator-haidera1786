@@ -55,21 +55,33 @@ public class EmployeeSalaryCalculator
 			4. Follow standard Java naming conventions for all code that you write.
 		*/
 
-
+		/**
+		 * IF hoursWorked <=40 THEN
+		 * basicPay = hoursWorked * hourlyRate
+		 * overTime = 0
+		 * overTimeRate = 0
+		 * overTimePay = 0
+		 * grossSalary =  basicPay
+		 */
 				if(HW <= standardWorkingHours)
-				{
-					//YOUR CODE STARTS HERE
-					 
+				{ //YOUR CODE STARTS HERE
+					basicPay =  hoursWorked * hourlyRate;
+					overTime = 0;
+					overTimeRate = 0;
+					overTimePay = 0;
+					grossSalary = basicPay;
 
 					//YOUR CODE ENDS HERE
 				}
 				else
 				{
 					//YOUR CODE STARTS HERE
- 
-
-					//YOUR CODE ENDS HERE
-				}
+					basicPay  = standardWorkingHours * hourlyRate;
+					overTime = hoursWorked - standardWorkingHours;
+					overTimeRate = hourlyRate * 2;
+					overTimePay = overTime * overTimeRate;
+					grossSalary = basicPay +overTimePay;
+				} //YOUR CODE ENDS HERE
 				return grossSalary;
 	}
 	
